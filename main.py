@@ -1,16 +1,31 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from kivymd.app import MDApp
+from kivy.uix.screenmanager import Screen, ScreenManager
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+class Manager(ScreenManager):
+    pass
 
 
-# Press the green button in the gutter to run the script.
+class LoginScreen(Screen):
+    pass
+
+
+class Entrada(Screen):
+    pass
+
+
+class Saida(Screen):
+    pass
+
+
+class PontoDigitalApp(MDApp):
+    def build(self):
+        gerenciador = Manager()
+        gerenciador.add_widget(LoginScreen(name='loginscreen'))
+        gerenciador.add_widget(LoginScreen(name='entrada'))
+        gerenciador.add_widget(LoginScreen(name='saida'))
+        return gerenciador
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    aplicativo = PontoDigitalApp()
+    aplicativo.run()

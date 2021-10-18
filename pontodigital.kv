@@ -1,0 +1,47 @@
+#: kivy 2.0.0
+
+Manager:
+    LoginScreen:
+        name:'loginscreen'
+    Entrada:
+        name:'entrada'
+    Saida:
+        name:'saida'
+
+<LoginScreen>:
+    FloatLayout:
+        BoxLayout:
+            id: container1
+            orientation:'vertical'
+            pos_hint:{'center_x':0.5, 'center_y':0.5}
+            size_hint: 0.65, None
+            MDTextField:
+                hint_text:'email'
+                multiline: False
+                write_tab: False
+            MDTextField
+                hint_text: 'senha'
+                multiline: False
+                write_tab: False
+                password: True
+            MDBoxLayout:
+                size_hint: 1, None
+                orientation:'vertical'
+                MDBoxLayout:
+                    md_bg_color:app.theme_cls.primary_color
+                    MDRoundFlatButton:
+                        anchor_x: 'left'
+                        anchor_y: 'top'
+                        text: 'Entrada'
+                    MDRoundFlatButton:
+                        anchor_x: 'right'
+                        anchor_y: 'top'
+                        text: 'Saída'
+                BoxLayout:
+                    pos_hint:{'x':0.5, 'y':0.05}
+                    # size_hint: None, None
+                    MDRoundFlatButton:
+                        text: 'Fechar'
+                        on_release: app.stop()
+
+
